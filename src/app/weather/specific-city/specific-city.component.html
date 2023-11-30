@@ -1,0 +1,38 @@
+<section class="specific-city">
+    <div class="card bg-dark text-white ">
+        <img [src]="'http://localhost:4454/images/' + city.image" class="card-img image" alt="specific city image">
+        <div class="card-img-overlay">
+            <div class="container">
+                <div class="toogle-temp">
+                  <input type="checkbox" class="btn-check" id="btn-check" autocomplete="off" (change)="checkboxClicked()">
+                  <label class="btn btn-color" for="btn-check">{{degreeSelected === 'cel' ? 'Celsius' : 'Fahrenheit'}}</label>
+                </div>
+              </div>
+
+            <div class="card-content d-flex flex-column justify-content-center">
+                <div class="city-name text-center">
+                    <h4 class="text-white card-title fs-1 mb-5">{{ city.city }}</h4>
+                </div>
+                <div class="container">
+                    <div class="days d-flex align-items-center justify-content-between">
+                        <div class="titles">
+                            <p class="date text-white fs-4">Date:</p>
+                            <p class="humidity text-white fs-4">Humidity:</p>
+                            <p class="temperature text-white fs-4">Temperature:</p>
+                        </div>
+                        <div class="day me-2" *ngFor="let day of city?.forecast">
+                            <p class="text-white fs-4">{{ day.date | date:'EEE' }}</p>
+                            <p class="text-white fs-4">{{ day.humidity }}</p>
+                            <p class="text-white fs-4">{{ degreeSelected === 'cel' ? day.temperatureCelsius + ' °C' :
+                                day.temperatureFahrenheit + '°F' }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+    </div>
+
+
+</section>

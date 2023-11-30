@@ -1,0 +1,14 @@
+.logo {
+    width: 150px; 
+    height: auto; 
+  }
+  
+.navbar-nav {
+    margin-left: auto; 
+  }
+
+/* msh shaghaala leihh? */
+ul li a:hover{
+    color: orange;
+}
+  

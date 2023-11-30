@@ -1,0 +1,13 @@
+.specific-city {
+    min-height: 100vh;
+    width: 100%;
+}
+
+.image{
+    height: 100vh;
+}
+
+.btn-color{
+    color: white;
+    background-color: rgb(234, 157, 15);
+}

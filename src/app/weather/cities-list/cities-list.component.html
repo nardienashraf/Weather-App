@@ -1,0 +1,46 @@
+<section class="cities-list">
+  <div class="cities-header py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 d-flex justify-content-center align-items-center mt-5">
+          <div class="searchbar w-75">
+            <div class="wrap">
+              <div class="search">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <input type="text" class="searchTerm" placeholder="Enter City Name...." [(ngModel)]="searchTerm" />
+                      <button type="submit" class="searchButton" (click)="search()">
+                        Search
+                      </button>
+                    </div>
+                    <div class="col-md-6">
+                      <input type="text" class="searchTerm" placeholder="Enter Date...." [(ngModel)]="date" />
+                      <button type="submit" class="searchButton" (click)="searchByDate()">Search</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container py-5" *ngIf="searchCity">
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <app-city [city]="searchCity"></app-city>
+      </div>
+    </div>
+  </div>
+
+  <div class="container py-5" *ngIf="!searchCity">
+    <div class="row">
+      <div class="col-md-4 mb-4" *ngFor="let city of cities">
+        <app-city [city]="city"></app-city>
+      </div>
+    </div>
+  </div>
+</section>
